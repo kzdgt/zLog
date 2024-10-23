@@ -14,7 +14,7 @@ var DefaultLog *zap.SugaredLogger
 
 func init() {
 
-	encoder := getEncoder()
+	encoder := getDefaultEncoder()
 	fileName := time.Now().Format("20060102") + ".log"
 	writeSyncer := getDefaultLogWriter("./logs", fileName, true)
 	c1 := zapcore.NewCore(encoder, writeSyncer, zapcore.DebugLevel)
