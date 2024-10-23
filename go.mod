@@ -1,4 +1,4 @@
-module zLog
+module e.coding.net/kzdgt/goprojects/zLog
 
 go 1.23.2
 
