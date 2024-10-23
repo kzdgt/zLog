@@ -87,6 +87,7 @@ func WithTimeFormat(format string) OptionFunc {
 func Init(opts ...OptionFunc) error {
 	var err error
 	once.Do(func() {
+		logger = &zLog{}
 		for _, opt := range opts {
 			opt(logger)
 		}
