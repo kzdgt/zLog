@@ -9,7 +9,7 @@ type GormLogger struct {
 	zap *zap.Logger
 }
 
-func New(logger *zap.Logger) GormLogger {
+func NewGormLogger(logger *zap.Logger) GormLogger {
 	return GormLogger{zap: logger}
 }
 
