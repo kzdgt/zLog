@@ -5,7 +5,7 @@ import (
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/natefinch/lumberjack.v2"
 	"os"
-	"path"
+	"path/filepath"
 	"time"
 )
 
@@ -140,7 +140,7 @@ func (z *zLog) getEncoder() zapcore.Encoder {
 }
 
 func (z *zLog) getLogWriter() (zapcore.WriteSyncer, error) {
-	fileName := path.Join(z.logDir, z.logFileName)
+	fileName := filepath.Join(z.logDir, z.logFileName)
 	if err := os.MkdirAll(z.logDir, os.ModePerm); err != nil {
 		return nil, err
 	}
